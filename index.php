@@ -25,21 +25,37 @@
 	<table border="1">
 		<tr>
 			<th>No</th>
+			<th>Id</th>
+			<th>No Agunan</th>
 			<th>Nama</th>
 			<th>ALamat</th>
-			<th>Telepon</th>
+			<th>Agunan</th>
+			<th>Detail Agunan</th>
+			<th>Realisasi</th>
+			<th>Lunas</th>
+			<th>Keterangan</th>
+			<th>No Hp</th>
+			<th>TTD</th>
 		</tr>
 		<?php 
 		include 'koneksi.php';
 		$no=1;
-		$data = mysqli_query($koneksi,"select * from data_pegawai");
+		$data = mysqli_query($koneksi,"select * from daftaragunan");
 		while($d = mysqli_fetch_array($data)){
 			?>
 			<tr>
 				<th><?php echo $no++; ?></th>
+				<th><?php echo $d['id']; ?></th>
+				<th><?php echo $d['nomorAgunan']; ?></th>
 				<th><?php echo $d['nama']; ?></th>
 				<th><?php echo $d['alamat']; ?></th>
-				<th><?php echo $d['telepon']; ?></th>
+				<th><?php echo $d['agunan']; ?></th>
+				<th><?php echo $d['detailAgunan']; ?></th>
+				<th><?php echo $d['realisasi']; ?></th>
+				<th><?php echo $d['lunas']; ?></th>
+				<th><?php echo $d['keterangan']; ?></th>
+				<th><?php echo $d['noHp']; ?></th>
+				<th><?php echo $d['ttd']; ?></th>
 			</tr>
 			<?php 
 		}
